@@ -1,6 +1,6 @@
 <section>
-  <div class="md:flex">
-    <div class="w-1/4">
+  <div class="md:flex mb-5">
+    <div class="w-2/3 mx-auto md:w-1/4 mb-5">
       <owl-carousel-o [options]="imagesCarousel">
         @for (img of productDetails.images ;track $index){
         <ng-template carouselSlide>
@@ -15,8 +15,8 @@
         }
       </owl-carousel-o>
     </div>
-    <div class="w-1/2 ms-10 text-md">
-      <h2 class="text-2xl font-semibold italic mb-5">
+    <div class="md:w-1/2 ms-10 text-md">
+      <h2 class="text-2xl font-semibold italic mb-5 text-green-500">
         {{ productDetails.title }}
       </h2>
       <p>{{ productDetails.description }}</p>
@@ -41,7 +41,7 @@
     </div>
   </div>
   <button
-    class="bg-green-600 text-white border rounded px-10 py-2 w-1/2 mx-auto block"
+    class="bg-green-600 text-white border rounded px-10 py-2 md:w-1/2 mx-auto block"
     (click)="addToCart(productDetails._id)"
   >
     {{ "home.AddToCart" | translate }}

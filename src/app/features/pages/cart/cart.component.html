@@ -1,34 +1,34 @@
 @if (cartData.totalCartPrice) {
 <section
-  class="bg-gray-50 border shadow rounded p-4 w-3/4 mx-auto dark:bg-slate-700 dark:border-black"
+  class="bg-gray-50 border shadow rounded p-2 md:p-4 md:w-3/4 mx-auto dark:bg-slate-700 dark:border-black"
 >
   <h1
-    class="text-3xl text-red-800 text-center font-semibold mb-10 dark:text-red-600"
+    class="text-3xl md:text-red-800 text-center font-semibold mb-10 dark:text-red-600"
   >
     Shop Cart
   </h1>
-  <div class="flex justify-between">
-    <span class="text-lg text-amber-800 dark:text-red-500"
-      >{{ "cart.TotalPrice" | translate }}
-      <span class="p-1">
+  <div class="md:flex justify-between">
+    <p class="text-lg text-amber-800 dark:text-red-500 mb-4">
+      {{ "cart.TotalPrice" | translate }}
+      <span class="p-1 dark:text-yellow-400">
         {{ cartData.totalCartPrice }}
+        {{ "cart.EGP" | translate }}
       </span>
-      {{ "cart.EGP" | translate }}
-    </span>
+    </p>
     <button
-      class="bg-red-500 text-white py-2 px-3 rounded-lg hover:bg-red-700 dark:text-black dark:hover:text-white"
+      class="block mx-auto bg-red-500 text-white py-2 px-3 rounded-lg hover:bg-red-700 dark:hover:text-white"
       (click)="clearCartData()"
     >
       {{ "cart.ClearCart" | translate }}
     </button>
   </div>
   @for (prod of cartData.products; track prod.product._id) {
-  <div class="grid grid-cols-[10%_minmax(0,1fr)] items-center">
-    <div>
+  <div class="md:grid md:grid-cols-[15%_minmax(0,1fr)] items-center my-2">
+    <div class="my-3">
       <img
         [src]="prod.product.imageCover"
         alt="{{ prod.product.title }}"
-        class="w-full h-[150px] object-contain"
+        class="w-full h-[200px] object-contain"
       />
     </div>
     <div class="flex justify-between items-center ps-4">
@@ -44,15 +44,18 @@
         </button>
       </div>
       <div>
-        <button (click)="updateQuantity(prod.product._id, prod.count + 1)">
-          <i class="fa-solid fa-circle-plus text-lime-600 text-2xl"></i>
-        </button>
-        <span class="p-2 text-xl">{{ prod.count }} </span>
-        <button (click)="updateQuantity(prod.product._id, prod.count - 1)">
-          <i class="fa-solid fa-circle-minus text-lime-600 text-2xl"></i>
-        </button>
+        <div class="flex justify-between">
+          <button (click)="updateQuantity(prod.product._id, prod.count + 1)">
+            <i class="fa-solid fa-circle-plus text-lime-600 text-2xl"></i>
+          </button>
+          <span class="p-2 text-xl">{{ prod.count }} </span>
+          <button (click)="updateQuantity(prod.product._id, prod.count - 1)">
+            <i class="fa-solid fa-circle-minus text-lime-600 text-2xl"></i>
+          </button>
+        </div>
       </div>
     </div>
+    <hr class="my-3 md:hidden" />
   </div>
   }
   <button

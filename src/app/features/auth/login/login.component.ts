@@ -36,7 +36,6 @@ export class LoginComponent {
       this.isLoading = true;
       this.authService.sendLoginForm(this.loginForm.value).subscribe({
         next: (res) => {
-          console.log(res);
           if (res.message === 'success') {
             this.isLoading = false;
             this.successMsg = res.message;
@@ -54,7 +53,6 @@ export class LoginComponent {
           }
         },
         error: (err) => {
-          console.log(err);
           this.errorMsg = err.error.message;
           this.isLoading = false;
         },
