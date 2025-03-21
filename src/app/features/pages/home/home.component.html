@@ -1,0 +1,120 @@
+<section class="mb-7">
+  <div class="md:grid md:grid-cols-[70%_minmax(0,1fr)]">
+    <div>
+      <owl-carousel-o [options]="mainSlider">
+        <ng-template carouselSlide>
+          <img
+            src="../../../../assets/images/slider-image-1.jpeg"
+            class="w-full h-[300px]"
+            alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="../../../../assets/images/slider-image-2.jpeg"
+            class="w-full h-[300px]"
+            alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="../../../../assets/images/slider-image-3.jpeg"
+            class="w-full h-[300px]"
+            alt=""
+        /></ng-template>
+      </owl-carousel-o>
+    </div>
+    <div class="flex md:block">
+      <img
+        src="../../../../assets/images/slider-image-3.jpeg"
+        class="w-[50%] md:w-full h-[150px]"
+        alt=""
+      />
+      <img
+        src="../../../../assets/images/slider-image-1.jpeg"
+        class="w-[50%] md:w-full h-[150px]"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+
+<section class="mb-7">
+  <h2 class="mb-5 text-3xl dark:text-yellow-400">
+    {{ "home.PopularCategories" | translate }}
+  </h2>
+  <owl-carousel-o [options]="customOptions">
+    @for (categ of categories; track categ._id) {
+    <ng-template carouselSlide>
+      <img
+        [src]="categ.image"
+        class="w-full h-[250px]"
+        alt="{{ categ.name }} "
+      />
+      <h3 class="text-green-600 text-center mt-3 dark:text-lime-500">
+        {{ categ.name }}
+      </h3>
+    </ng-template>
+    }
+  </owl-carousel-o>
+</section>
+
+<section>
+  <h2 class="mb-5 text-3xl dark:text-yellow-400">
+    {{ "home.PopularProducts" | translate }}
+  </h2>
+  <input
+    type="text"
+    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-400 mb-9 block w-2/3 md:w-1/2 mx-auto p-2.5 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    [(ngModel)]="MySearch"
+  />
+  <div
+    class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-[90%] mx-auto"
+  >
+    @for (prod of products.slice(0,18) |search :MySearch ; track prod._id) {
+    <div
+      class="border border-orange-500/50 rounded-lg overflow-hidden shadow relative productCard dark:bg-slate-700 dark:text-gray-100"
+    >
+      <div [routerLink]="['/details', prod._id]">
+        <div>
+          <img
+            [src]="prod.imageCover"
+            class="w-full h-[300px] md:object-contain"
+            alt="{{ prod.title }}"
+          />
+        </div>
+        <div class="px-2 pb-2">
+          <div class="flex justify-between items-center">
+            <div>
+              <h4 class="text-red-600 text-md my-3 dark:text-green-500">
+                {{ prod.category.name }}
+              </h4>
+              <h3 class="font-medium">
+                {{ prod.title.split(" ", 2).join(" ") }}
+              </h3>
+            </div>
+            <button
+              class="py-1 px-2 rounded-xl bg-yellow-400 hover:bg-yellow-600 text-black"
+            >
+              {{ "home.ShowDetails" | translate }}
+            </button>
+          </div>
+          <div class="flex justify-between items-center">
+            <div>{{ prod.price }} {{ "cart.EGP" | translate }}</div>
+            <div>
+              <i class="fas fa-star text-yellow-400"></i>
+              <span class="text-gray-500 dark:text-white"
+                >{{ prod.ratingsAverage }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        (click)="addToCart(prod._id)"
+        class="bg-blue-500 text-white border rounded px-10 py-2 w-full add"
+      >
+        {{ "home.AddToCart" | translate }}
+      </button>
+    </div>
+    }
+  </div>
+</section>

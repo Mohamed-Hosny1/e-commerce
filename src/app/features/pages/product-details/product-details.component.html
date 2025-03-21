@@ -1,0 +1,49 @@
+<section>
+  <div class="md:flex">
+    <div class="w-1/4">
+      <owl-carousel-o [options]="imagesCarousel">
+        @for (img of productDetails.images ;track $index){
+        <ng-template carouselSlide>
+          <img
+            [src]="productDetails.images[$index]"
+            [alt]=""
+            [title]=""
+            class="w-full"
+          />
+        </ng-template>
+
+        }
+      </owl-carousel-o>
+    </div>
+    <div class="w-1/2 ms-10 text-md">
+      <h2 class="text-2xl font-semibold italic mb-5">
+        {{ productDetails.title }}
+      </h2>
+      <p>{{ productDetails.description }}</p>
+      <p class="mt-12">
+        <span class="font-semibold me-3">{{
+          "productDetails.Price" | translate
+        }}</span>
+        @if (productDetails.priceAfterDiscount) {
+        <del class="text-red-600 font-medium">{{ productDetails.price }}</del>
+        <span class="ms-4">{{ productDetails.priceAfterDiscount }} </span>
+        }@else {
+        <span class="ms-4">{{ productDetails.price }} </span>
+        }
+        {{ "cart.EGP" | translate }}
+      </p>
+      <p>
+        <span class="font-semibold me-3">
+          {{ "productDetails.availableQuantity" | translate }}</span
+        >
+        {{ productDetails.quantity }}
+      </p>
+    </div>
+  </div>
+  <button
+    class="bg-green-600 text-white border rounded px-10 py-2 w-1/2 mx-auto block"
+    (click)="addToCart(productDetails._id)"
+  >
+    {{ "home.AddToCart" | translate }}
+  </button>
+</section>

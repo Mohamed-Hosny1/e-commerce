@@ -1,0 +1,155 @@
+<section
+  class="w-1/2 mx-auto p-4 bg-gray-100 rounded-md shadow dark:bg-slate-500"
+>
+  <form action="" [formGroup]="checkoutForm">
+    <div class="mb-1">
+      <label
+        for="details"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.details" | translate }}</label
+      >
+      <textarea
+        formControlName="details"
+        id="details"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+      </textarea>
+      @if (checkoutForm.get('details')?.errors &&
+      checkoutForm.get('details')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (checkoutForm.get('phone')?.getError('required')) {
+
+            <li>{{ "checkout.DetailsIsRequired" | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="mb-1">
+      <label
+        for="phone"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "register.phone" | translate }}</label
+      >
+      <input
+        formControlName="phone"
+        type="tel"
+        id="phone"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+      @if (checkoutForm.get('phone')?.errors &&
+      checkoutForm.get('phone')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (checkoutForm.get('phone')?.getError('required')) {
+
+            <li>{{ "register.phoneIsRequired" | translate }}</li>
+            }@else if (checkoutForm.get('phone')?.getError('pattern')) {
+
+            <li>{{ "register.invalidPhone" | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="mb-1">
+      <label
+        for="city"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.city" | translate }}</label
+      >
+      <input
+        formControlName="city"
+        type="tel"
+        id="city"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+      @if (checkoutForm.get('city')?.errors &&
+      checkoutForm.get('city')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (checkoutForm.get('phone')?.getError('required')) {
+
+            <li>{{ "checkout.cityIsRequired" | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <button
+      [disabled]="checkoutForm.invalid"
+      class="bg-blue-600 text-white border rounded-full mx-auto mt-3 shadow py-2 px-4 hover:bg-blue-800 flex"
+      (click)="submitForm()"
+    >
+      <img
+        src="../../../../assets/images/mastercard.webp"
+        class="w-[40px]"
+        alt="visa"
+      />{{ "checkout.onlinePayment" | translate }}
+    </button>
+    <button
+      class="bg-blue-600 text-white border rounded-full flex mx-auto mt-3 shadow py-2 px-4 hover:bg-blue-800"
+      [disabled]="checkoutForm.invalid"
+      (click)="submitForm()"
+    >
+      <img
+        src="../../../../assets/images/cash-on-delivery.png"
+        class="w-[25px] rounded-full inline-block me-2"
+        alt="cash payment"
+      />
+      {{ "checkout.cashPayment" | translate }}
+    </button>
+  </form>
+</section>

@@ -1,0 +1,13 @@
+.productCard{
+    .add{
+        transform: translateY(100%);
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    &:hover{
+        .add{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}

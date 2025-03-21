@@ -1,0 +1,12 @@
+<div class="flex flex-col justify-center items-center min-h-screen">
+  <h1 class="text-4xl text-blue-900">
+    {{ "notfound.SorryThisPageIsnNotAvailable" | translate }}
+  </h1>
+  <p class="my-6">
+    {{ "notfound.theLinkYouFollowed" | translate }}
+  </p>
+
+  <a [routerLink]="['/home']" class="underline text-blue-600">{{
+    "notfound.goBackToHomePage" | translate
+  }}</a>
+</div>

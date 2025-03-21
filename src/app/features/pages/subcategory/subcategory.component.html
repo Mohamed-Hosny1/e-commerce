@@ -1,0 +1,8 @@
+<div class="w-[90%] mx-auto bg-neutral-50 shadow-md text-center p-5 mt-6">
+  <h2 class="text-2xl text-blue-500 font-semibold my-4">{{ categoryName }}</h2>
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    @for (cat of subCategoryDetails; track cat._id) {
+    <p class="p-5 shadow-md border-2 rounded-xl bg-amber-100">{{ cat.name }}</p>
+    }
+  </div>
+</div>

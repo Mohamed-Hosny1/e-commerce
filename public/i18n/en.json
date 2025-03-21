@@ -1,0 +1,110 @@
+{
+    "navbar":{
+        "home" :"Home",
+        "products":"Products",
+        "categories":"Categories",
+        "brands":"Brands",
+        "Logout":"Log Out",
+        "Login":"Log In",
+        "Register":"Register",
+        "openMainMenu": "Open main menu",
+        "lang":"lang"
+        
+        
+
+    },
+    "login":{
+
+        "Login":"Log In",
+        "email" :"email",
+        "emailIsRequired" :"email is required",
+        "invalidEmail" :"invalid email",
+        "password":"password",
+        "passwordIsRequired":"password is required",
+        "invalidPass":"invalid password : ^ you must start with a capital letter then 7 or more of any character ^",
+        "ForgetPassword":"Forget Password",
+        "CreateNewAccount":"Create a new account"
+    
+    },
+    "register":{
+        "RegisterNow":"Register Now",
+        "name":"name",
+        "UserNameIsRequired":"UserName is required",
+        "AtLeastCharacters":"At least 3 characters",
+        "YouCanNotAddMoreCharacters":"You can't add more than 20 characters",
+        "repassword":"repassword",
+        "passwordConfirmationIsIncorrect":"password confirmation is incorrect",
+        "phone":"phone",
+        "phoneIsRequired":"phone is required",
+        "invalidPhone":"invalid phone",
+        "SignUp":"Sign Up"
+    },
+    "footer":{
+        "GetTheFreshCartApp":"Get The FreshCart App",
+        "WeWillSendYou ":"We Will Send You a Link, Open it on Your Phone to download the app",
+        "ShareAppLink":"Share App Link",
+        "PaymentPartners":"Payment partners",
+        "GetDeliverieswithFreshCart":"Get Deliveries with FreshCart"
+    },
+    "brands":{
+        "AllBrands":"All Brands"
+    },
+    "cart":{
+        "TotalPrice":"Total Price :",
+        "EGP":"EGP",
+        "ClearCart":"Clear Cart",
+        "remove":"remove",
+        "CheckOut":"CheckOut",
+        "CartIsEmpty":"Cart is empty"
+    },
+    "checkout":{
+        "details":"details",
+        "DetailsIsRequired":"Details is required",
+        "city":"city",
+        "cityIsRequired":"city is required",
+        "onlinePayment":"online payment",
+        "cashPayment":"cash payment"
+
+    },
+    "forgetPassword":{
+        "ForgetPassword":"Forget Password",
+        "EnterYourEmail":"Enter Your Email",
+        "VerifyEmail":"Verify Email",
+        "EnterCodeSentToYourEmail":"Enter code sent to your email",
+        "resetCodeIsRequired":"reset Code is required",
+        "invalidResetCode":"invalid reset Code",
+        "VerifyCode":"Verify Code",
+        "NewPassword":"New password",
+        "NewPasswordIsRequired":"New password is required",
+        "ResetPassword":"Reset Password"
+    },
+    "home":{
+        "PopularCategories":"Popular Categories",
+        "PopularProducts":"Popular Products",
+        "ShowDetails":"Show Details",
+        "AddToCart":"Add To Cart"
+    },
+    "notfound":{
+        "SorryThisPageIsnNotAvailable":"Sorry, this page isn't available .",
+        "theLinkYouFollowed ":"the link you followed may be broken , or the page may have been removed ",
+        "goBackToHomePage":"go back to home page"
+    },
+    "productDetails":{
+        "Price":"Price :",
+        "availableQuantity":"available Quantity :"
+    },
+    "Products":{
+        "Products":"Products"
+    },
+    "orders":{
+        "Hello":"Hello",
+        "PaymentCompletedSuccessfully":"Payment completed successfully",
+        "totalOrderPrice":"Total order Price :",
+        "PaymentMethod":"Payment Method :",
+        "PaidAt":"Paid at : ",
+        "SuccessfullyDelivered":"Successfully Delivered",
+        "YourOrderWillBeDelivered":"Your order will be delivered",
+        "FailedToPay":"Failed to pay"
+
+    }
+}

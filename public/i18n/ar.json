@@ -1,0 +1,103 @@
+{
+    "navbar": {
+        "home": "الرئيسية",
+        "products": "المنتجات",
+        "categories": "الفئات",
+        "brands": "العلامات التجارية",
+        "Logout": "تسجيل الخروج",
+        "Login": "تسجيل الدخول",
+        "Register": "إنشاء حساب",
+        "openMainMenu": "فتح القائمة الرئيسية",
+        "lang":"اللغة"
+    },
+    "login": {
+        "Login": "تسجيل الدخول",
+        "email": "البريد الإلكتروني",
+        "emailIsRequired": "البريد الإلكتروني مطلوب",
+        "invalidEmail": "البريد الإلكتروني غير صالح",
+        "password": "كلمة المرور",
+        "passwordIsRequired": "كلمة المرور مطلوبة",
+        "invalidPass": "كلمة المرور غير صالحة: ^ يجب أن تبدأ بحرف كبير ثم 7 أحرف أو أكثر ^",
+        "ForgetPassword": "نسيت كلمة المرور",
+        "CreateNewAccount": "إنشاء حساب جديد"
+    },
+    "register": {
+        "RegisterNow": "سجل الآن",
+        "name": "الاسم",
+        "UserNameIsRequired": "اسم المستخدم مطلوب",
+        "AtLeastCharacters": "يجب أن يكون على الأقل 3 أحرف",
+        "YouCanNotAddMoreCharacters": "لا يمكنك إضافة أكثر من 20 حرفًا",
+        "repassword": " كلمة المرور الجديدة",
+        "passwordConfirmationIsIncorrect": "تأكيد كلمة المرور غير صحيح",
+        "phone": "الهاتف",
+        "phoneIsRequired": "رقم الهاتف مطلوب",
+        "invalidPhone": "رقم هاتف غير صالح",
+        "SignUp": "إنشاء حساب"
+    },
+    "footer": {
+        "GetTheFreshCartApp": "احصل على تطبيق فريش كارت",
+        "WeWillSendYou ": "سنرسل لك رابطًا، افتحه على هاتفك لتنزيل التطبيق",
+        "ShareAppLink": "مشاركة رابط التطبيق",
+        "PaymentPartners": "شركاء الدفع",
+        "GetDeliverieswithFreshCart": "احصل على التوصيل مع فريش كارت"
+    },
+    "brands": {
+        "AllBrands": "جميع العلامات التجارية"
+    },
+    "cart": {
+        "TotalPrice": ":السعر الإجمالي ",
+        "EGP": "ج.م",
+        "ClearCart": "إفراغ السلة",
+        "remove": "إزالة",
+        "CheckOut": "إتمام الشراء",
+        "CartIsEmpty": "السلة فارغة"
+    },
+    "checkout": {
+        "details": "التفاصيل",
+        "DetailsIsRequired": "التفاصيل مطلوبة",
+        "city": "المدينة",
+        "cityIsRequired": "المدينة مطلوبة",
+        "onlinePayment": "الدفع الإلكتروني",
+        "cashPayment": "الدفع نقدًا"
+    },
+    "forgetPassword": {
+        "ForgetPassword": "نسيت كلمة المرور",
+        "EnterYourEmail": "أدخل بريدك الإلكتروني",
+        "VerifyEmail": "التحقق من البريد الإلكتروني",
+        "EnterCodeSentToYourEmail": "أدخل الرمز المرسل إلى بريدك الإلكتروني",
+        "resetCodeIsRequired": "رمز إعادة التعيين مطلوب",
+        "invalidResetCode": "رمز إعادة التعيين غير صالح",
+        "VerifyCode": "التحقق من الرمز",
+        "NewPassword": "كلمة مرور جديدة",
+        "NewPasswordIsRequired": "كلمة المرور الجديدة مطلوبة",
+        "ResetPassword": "إعادة تعيين كلمة المرور"
+    },
+    "home": {
+        "PopularCategories": "الفئات الشائعة",
+        "PopularProducts": "المنتجات الشائعة",
+        "ShowDetails": "عرض التفاصيل",
+        "AddToCart": "أضف إلى السلة"
+    },
+    "notfound": {
+        "SorryThisPageIsnNotAvailable": ".عذرًا، هذه الصفحة غير متاحة",
+        "theLinkYouFollowed ": ".قد يكون الرابط الذي تبعته غير صالح، أو ربما تمت إزالة الصفحة",
+        "goBackToHomePage": "العودة إلى الصفحة الرئيسية"
+    },
+    "productDetails": {
+        "Price": "السعر :",
+        "availableQuantity": "الكمية المتاحة :"
+    },
+    "Products": {
+        "Products": "المنتجات"
+    },
+    "orders": {
+        "Hello": "مرحبا",
+        "PaymentCompletedSuccessfully": "تم الدفع بنجاح",
+        "totalOrderPrice": "إجمالي سعر الطلب :",
+        "PaymentMethod": "طريقة الدفع :",
+        "PaidAt": "تم الدفع في : ",
+        "SuccessfullyDelivered": "تم التوصيل بنجاح",
+        "YourOrderWillBeDelivered": "سيتم توصيل طلبك",
+        "FailedToPay": "فشل الدفع"
+    }
+}

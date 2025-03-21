@@ -1,0 +1,59 @@
+<section>
+  <h2 class="mb-5 text-3xl">{{ "Products.Products" | translate }}</h2>
+  <input
+    type="text"
+    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 mb-8 block w-1/2 mx-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    [(ngModel)]="MySearch"
+  />
+  <div
+    class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 w-[90%] mx-auto"
+  >
+    @for (prod of products |search:MySearch; track prod._id) {
+    <div
+      class="border border-orange-500/50 rounded-lg overflow-hidden shadow relative productCard dark:bg-slate-700 dark:text-gray-100"
+    >
+      <div [routerLink]="['/details', prod._id]">
+        <div>
+          <img
+            [src]="prod.imageCover"
+            class="w-full h-[300px] md:object-contain"
+            alt="{{ prod.title }}"
+          />
+        </div>
+        <div class="px-2 pb-2">
+          <div class="flex justify-between items-center">
+            <div>
+              <h4 class="text-red-600 text-md my-3 dark:text-green-500">
+                {{ prod.category.name }}
+              </h4>
+              <h3 class="font-medium">
+                {{ prod.title.split(" ", 2).join(" ") }}
+              </h3>
+            </div>
+            <button
+              class="py-1 px-2 rounded-xl bg-yellow-400 hover:bg-yellow-600 text-black"
+            >
+              {{ "home.ShowDetails" | translate }}
+            </button>
+          </div>
+          <div class="flex justify-between items-center">
+            <div>{{ prod.price }} {{ "cart.EGP" | translate }}</div>
+            <div>
+              <i class="fas fa-star text-yellow-400"></i>
+              <span class="text-gray-500 dark:text-white"
+                >{{ prod.ratingsAverage }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        (click)="addToCart(prod._id)"
+        class="bg-blue-500 text-white border rounded px-10 py-2 w-full add"
+      >
+        {{ "home.AddToCart" | translate }}
+      </button>
+    </div>
+    }
+  </div>
+</section>

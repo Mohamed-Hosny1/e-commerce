@@ -1,0 +1,49 @@
+<section>
+  <h1 class="text-center text-3xl my-6">
+    <span class="text-blue-600 dark:text-yellow-400">
+      {{ "orders.Hello" | translate }}</span
+    >
+    <span class="text-red-700 dark:text-red-500 text-4xl">
+      {{ orders[0].user.name }}
+    </span>
+  </h1>
+  @if (orders[0].isPaid) {
+  <div
+    class="w-1/2 mx-auto border shadow rounded-lg p-4 dark:border-white dark:bg-slate-600"
+  >
+    <h2 class="text-center text-xl text-green-700 dark:text-green-500 mb-4">
+      {{ "orders.PaymentCompletedSuccessfully" | translate }}
+    </h2>
+    <p class="text-xl">
+      <span class="pe-3">{{ "orders.totalOrderPrice" | translate }}</span>
+      <span class="text-amber-800 text-xl dark:text-yellow-400"
+        >{{ orders[0].totalOrderPrice }} {{ "cart.EGP" | translate }}</span
+      >
+    </p>
+    <p class="text-xl">
+      <span class="pe-3"> {{ "orders.PaymentMethod" | translate }}</span>
+      <span class="text-amber-800 text-xl dark:text-yellow-400">{{
+        orders[0].paymentMethodType
+      }}</span>
+    </p>
+    <p class="text-xl">
+      <span class="pe-3">{{ "orders.PaidAt" | translate }}</span>
+      <span class="text-amber-800 text-xl dark:text-yellow-400">{{
+        orders[0].paidAt | date : "short"
+      }}</span>
+    </p>
+  </div>
+  @if (orders[0].isDelivered) {
+  <p class="text-green-700 text-xl mt6 text-center">
+    {{ "orders.SuccessfullyDelivered" | translate }}
+  </p>
+  }@else {
+  <p class="text-violet-800 text-xl text-center dark:text-indigo-300 mt-6">
+    {{ "orders.YourOrderWillBeDelivered" | translate }}
+  </p>
+  } }@else {
+  <p class="text-center text-xl text-red-600">
+    {{ "orders.FailedToPay" | translate }}
+  </p>
+  }
+</section>

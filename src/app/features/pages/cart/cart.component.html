@@ -1,0 +1,70 @@
+@if (cartData.totalCartPrice) {
+<section
+  class="bg-gray-50 border shadow rounded p-4 w-3/4 mx-auto dark:bg-slate-700 dark:border-black"
+>
+  <h1
+    class="text-3xl text-red-800 text-center font-semibold mb-10 dark:text-red-600"
+  >
+    Shop Cart
+  </h1>
+  <div class="flex justify-between">
+    <span class="text-lg text-amber-800 dark:text-red-500"
+      >{{ "cart.TotalPrice" | translate }}
+      <span class="p-1">
+        {{ cartData.totalCartPrice }}
+      </span>
+      {{ "cart.EGP" | translate }}
+    </span>
+    <button
+      class="bg-red-500 text-white py-2 px-3 rounded-lg hover:bg-red-700 dark:text-black dark:hover:text-white"
+      (click)="clearCartData()"
+    >
+      {{ "cart.ClearCart" | translate }}
+    </button>
+  </div>
+  @for (prod of cartData.products; track prod.product._id) {
+  <div class="grid grid-cols-[10%_minmax(0,1fr)] items-center">
+    <div>
+      <img
+        [src]="prod.product.imageCover"
+        alt="{{ prod.product.title }}"
+        class="w-full h-[150px] object-contain"
+      />
+    </div>
+    <div class="flex justify-between items-center ps-4">
+      <div>
+        <h3>{{ prod.product.title }}</h3>
+        <p class="mb-5">price :{{ prod.price }} EGP</p>
+        <button
+          class="border shadow rounded p-1"
+          (click)="removeCartData(prod.product._id)"
+        >
+          <i class="fas fa-trash-can text-blue-500 text-lg"></i>
+          {{ "cart.remove" | translate }}
+        </button>
+      </div>
+      <div>
+        <button (click)="updateQuantity(prod.product._id, prod.count + 1)">
+          <i class="fa-solid fa-circle-plus text-lime-600 text-2xl"></i>
+        </button>
+        <span class="p-2 text-xl">{{ prod.count }} </span>
+        <button (click)="updateQuantity(prod.product._id, prod.count - 1)">
+          <i class="fa-solid fa-circle-minus text-lime-600 text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+  <button
+    type="submit"
+    class="bg-green-600 text-white border rounded-full block mx-auto mt-3 shadow py-2 px-4 hover:bg-green-800"
+    [routerLink]="['/checkout', cartData._id]"
+  >
+    {{ "cart.CheckOut" | translate }}
+  </button>
+</section>
+}@else {
+<h2 class="text-center text-3xl text-red-600">
+  {{ "cart.CartIsEmpty" | translate }}
+</h2>
+}
